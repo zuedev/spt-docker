@@ -51,33 +51,3 @@ git submodule add https://dev.sp-tarkov.com/SPT-AKI/Server.git SPT-Server
 git submodule update --init --recursive
 ```
 Note: Needs LFS!
-
-## Stay in Tarkov Submodules
-### Add the remotes
-
-```bash
-git remote add -f sit-client git@github.com:stayintarkov/StayInTarkov.Client.git
-git remote add -f sit-server git@github.com:stayintarkov/SIT.Aki-Server-Mod.git
-git remote add -f sit-manager git@github.com:stayintarkov/SIT.Manager.git
-git remote add -f sit-mods git@github.com:stayintarkov/SIT-Mod-Ports.git
-```
-### Add the subtrees 
-```bash
-git subtree add --prefix sit-client sit-client master --squash
-git fetch sit-client
-git subtree pull --prefix sit-client sit-client master --squash
-
-git subtree add --prefix sit-server sit-server master --squash
-git fetch sit-server
-git subtree pull --prefix sit-server sit-server master --squash
-
-git subtree add --prefix sit-manager sit-manager master --squash
-git fetch sit-manager
-git subtree pull --prefix sit-manager sit-manager master --squash
-
-git subtree add --prefix sit-mods sit-mods master --squash
-git fetch sit-mods
-git subtree pull --prefix sit-mods sit-mods master --squash
-
-```
-Repeat for all the repos in https://github.com/stayintarkov
