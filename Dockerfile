@@ -10,8 +10,8 @@ RUN git clone https://dev.sp-tarkov.com/SPT-AKI/Server.git . && \
     git lfs pull
 
 FROM node:20.11.1-alpine AS builder
-WORKDIR /app
 RUN apk add git git-lfs
+WORKDIR /app
 COPY --from=fetch /repo .
 WORKDIR /app/project
 RUN npm install -g npm@10.5.1
