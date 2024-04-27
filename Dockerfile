@@ -15,6 +15,7 @@ RUN apk add git git-lfs
 COPY --from=fetch /repo .
 WORKDIR /app/project
 RUN npm install -g npm@10.5.1
+RUN npm install
 RUN npm run build:release
 
 FROM alpine as base
