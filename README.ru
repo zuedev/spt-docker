@@ -43,9 +43,9 @@ docker buildx build -f Dockerfile -t cbr/spt:latest ./
 ```bash
 mkdir /opt/spt-aki && mkdir /opt/spt-aki/Server && mkdir /opt/spt-aki/user
 docker run --name spt-aki -v /opt/spt-aki/Server:/app/Aki_Data/Server -v /opt/spt-aki/user:/app/user -e SPT_LOG_REQUESTS=false -e SPT_BACKEND_IP='External IP' -p 6969:6969 cbr/spt:latest -d
-```\
+```
 
-Где External IP - это нужный вам IP адрес - ваш внешний IP, IP адрес локального хоста или полученный в VPN сети.\
+Где External IP - это нужный вам IP адрес - ваш внешний IP, IP адрес локального хоста или полученный в VPN сети.
 
 ---
 
