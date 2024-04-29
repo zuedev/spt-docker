@@ -1,7 +1,7 @@
 # single-player-tarkov-docker
 Private Dockerfile to build a docker container for Single-Player-Tarkov
 
-[README на Русском языке](https://dev.sp-tarkov.com/Allastor/spt-docker/src/branch/main/README.ru)
+[README на Русском языке](https://dev.sp-tarkov.com/Allastor/spt-docker/src/branch/main/README_ru.md)
 
 ## Requirements
 
