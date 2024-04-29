@@ -1,11 +1,13 @@
 # single-player-tarkov-docker
 Private Dockerfile to build a docker container for Single-Player-Tarkov
 
-# Dependencies
+[README на Русском языке](https://dev.sp-tarkov.com/Allastor/spt-docker/src/branch/main/README.ru)
 
-None
+## Requirements
 
-Note: SPT-AKI does not work as a subtree (can be used as a .gitmodule) because of lfs. I've decided to pull in the image (with a builder) instead of forking / adding the submodule to this repo, as it is standarized in Dockerfiles as per 2024-04
+Debian or another Linux distr\
+Docker\
+git [LFS](https://git-lfs.github.com/)
 
 # Docker Support
 
@@ -32,22 +34,19 @@ The way SPT is organizing their release is by tags on  release branches. 3.8.0 w
 Note: It can be a good idea to evolve the Dockerfile to include SPT_VERSION for the branch and always use latest tag) 
 
 ```bash
-docker build -t cbr/spt:latest -t cbr/spt:your-tag-version-here
+git clone https://dev.sp-tarkov.com/Cbr/spt-docker.git
+cd spt-docker
+docker buildx build -f Dockerfile -t cbr/spt:latest ./
 ```
+
+# Running
+
+```bash
+mkdir /opt/spt-aki && mkdir /opt/spt-aki/Server && mkdir /opt/spt-aki/user
+docker run --name spt-aki -v /opt/spt-aki/Server:/app/Aki_Data/Server -v /opt/spt-aki/user:/app/user -e SPT_LOG_REQUESTS=false -e SPT_BACKEND_IP='External ip' -p 6969:6969 cbr/spt:latest -d
+```
+
+
+Where "External IP" - this is the IP address you need - your external IP, local host IP address or received in the VPN network.
 
 ---
-
-
-# Old Documentation
-
-Some old documentation if moving to local submodule is desired
-## Add a submodule for SPT-Aki
-```bash
-git submodule add https://dev.sp-tarkov.com/SPT-AKI/Server.git SPT-Server
-```
-
-## Retrieve after adding
-```bash
-git submodule update --init --recursive
-```
-Note: Needs LFS!
