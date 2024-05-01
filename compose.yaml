@@ -9,3 +9,7 @@ services:
     volumes:
       - config:/app/Aki_Data/Server
       - user:/app/user
+
+volumes:
+  config:
+  user:
