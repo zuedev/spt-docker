@@ -4,8 +4,8 @@ services:
     ports:
       - "6969:6969"
     environment:
-      SPT_LOG_REQUESTS=true
-      SPT_BACKEND_IP=127.0.0.1
+      - SPT_LOG_REQUESTS=true
+      - SPT_BACKEND_IP=127.0.0.1
     volumes:
       - config:/app/Aki_Data/Server
       - user:/app/user
