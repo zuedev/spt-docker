@@ -32,4 +32,9 @@ COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 VOLUME /app/user
 VOLUME /app/Aki_Data/Server
+
+# install fika
+RUN wget https://cdn.discordapp.com/attachments/1190050801083760670/1235245300663455864/MPT_HOTFIX_2_0.9.8876.41975.zip
+RUN unzip MPT_HOTFIX_2_0.9.8876.41975.zip -d /app/
+
 ENTRYPOINT ["/app/entrypoint.sh"]
