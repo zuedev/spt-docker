@@ -34,7 +34,7 @@ VOLUME /app/user
 VOLUME /app/Aki_Data/Server
 
 # install fika
-RUN wget https://cdn.discordapp.com/attachments/1190050801083760670/1235245300663455864/MPT_HOTFIX_2_0.9.8876.41975.zip?ex=6633ab55&is=663259d5&hm=7a7bdda4309c41ffbfd21f2be1267eefc0fa61aad648bfe88f08be3070380269&
+RUN wget -O MPT_HOTFIX_2_0.9.8876.41975.zip https://cdn.discordapp.com/attachments/1190050801083760670/1235245300663455864/MPT_HOTFIX_2_0.9.8876.41975.zip?ex=6633ab55&is=663259d5&hm=7a7bdda4309c41ffbfd21f2be1267eefc0fa61aad648bfe88f08be3070380269&
 RUN unzip MPT_HOTFIX_2_0.9.8876.41975.zip -d /app/
 
 ENTRYPOINT ["/app/entrypoint.sh"]
